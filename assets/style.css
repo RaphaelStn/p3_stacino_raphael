@@ -1,0 +1,183 @@
+body {
+	font-family: Tahoma,"sans-serif";
+	margin :0;
+}
+header {
+	height: 150px;
+	background-color: darkred;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/*******************************************
+****************** SLIDER  *****************
+*******************************************/
+
+#slider{
+	width: 900px;
+	margin:auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+.container-slider{
+	display: flex;
+	flex-direction: row;
+	height: 500px;
+	margin:auto;
+}
+.slide{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 1;
+	opacity: 0;
+	transition: opacity 1s;
+}
+.slide p {
+	text-align: center;
+}
+.slide img{
+	width: 900px;
+	height: 500px;
+	object-fit: cover;
+
+}
+.slide-active{
+	opacity: 1;
+	z-index: 2;
+}
+.button-nav{
+	width: 40px;
+	height: 40px;
+	background-color: rgba(0,0,0,0.6);
+	border-radius: 2px;
+	cursor: pointer;
+	text-align: center;
+	color: #ffffff;
+	z-index:3;
+	padding-top: 20px;
+}
+.container-button-nav {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+}
+.button-pause{
+	width: 40px;
+	height:40px;
+	background-color: rgba(0,0,0,0.6);
+	border-radius: 2px;
+	cursor: pointer;
+	text-align: center;
+	color: #ffffff;
+	z-index:3;
+	align-self: flex-end;
+}
+.div-pause {
+	opacity: 0;
+	z-index: 1;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+}
+.button-pause-active {
+	opacity: 1;
+	z-index: 3;
+}
+/*******************************************
+********************* MAP ******************
+*******************************************/
+#map {
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-around;
+}
+#mapid { 
+	height: 650px;
+	width: 750px;
+}
+#canvas {
+	display: flex;
+	border: 2px solid ;
+	border-radius: 15px;
+	cursor: crosshair;
+	max-width: 95%;
+}
+.station-closed {
+	opacity: 0;
+}.station-open {
+	opacity: 1;
+}
+.popup .popup-text {
+	visibility: hidden;
+	width: 160px;
+	background-color: #D8000C;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 8px 8px;
+	position: relative;
+	top: 10px;
+	z-index: 1;
+	margin-top: 5px;
+}
+.popup .popup-show {
+  	visibility: visible;
+}
+.canvas-disabled {
+	display: none;
+}
+.canvas-enabled {
+	display: contents;
+}
+.timer {
+	text-align: center;
+}
+.disable {
+	display: none;
+}
+.enable {
+	display: contents;
+}
+.aside {
+	text-align: center;
+}
+.legende img {
+	width: 25px;
+	height: 25px;
+}
+/******************************************
+************** MEDIA QUERIES **************
+*******************************************/
+
+@media (max-width: 800px) {
+	html, body {
+  		overflow-x: hidden;
+	}
+	body {
+  	position: relative
+	}
+	#map {
+		flex-direction: column;
+	}
+	#mapid {
+		height: 350px;
+		margin-left: 15px;
+		max-width: 93%;
+	}
+	#slider  {
+		object-fit: cover;
+		width: 100%;
+	}
+	.slide {
+		max-width: 100%;
+	}
+}

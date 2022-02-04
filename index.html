@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<title>Location de vélo à Lyon</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+</head>
+
+<body>
+
+<header>
+	<h1>Location de vélo à Lyon</h1>
+</header>
+<section id="slider">
+	<div class="container-slider">
+		<div class="slider-items">
+			<div class="slide slide-active">
+				<img src="./assets/images/diapo1.jpg" alt="carte map"/>
+				<p>1- Séléctionnez une station pour effectuer une réservation.</p>
+			</div>
+			<div class="slide">
+				<img src="./assets/images/diapo2.jpg" alt="reservation en ligne"/>
+				<p>2- Entrez nom, prénom et signature pour confirmer.</p>
+			</div>
+			<div class="slide">
+				<img src="./assets/images/diapo3.jpeg" alt="reservation velo"/>
+				<p>3- Une fois la résérvation effectuée, vous avez 20minutes pour récuperer votre vélo !</p>
+			</div>
+			
+		</div>
+		<div class="container-button-nav">
+			<div class="button-nav button-left">
+				<i class="fa fa-chevron-left fa-lg" aria-hidden="true"></i>
+			</div>
+			<div class="button-pause">
+				<div class="div-pause button-pause-active">
+                	<i class="fas fa-pause"></i>
+            	</div>
+            	<div class="div-pause">
+                	<i class="fas fa-play"></i>
+                </div>
+			</div>
+			<div class="button-nav button-right">
+				<i class="fa fa-chevron-right fa-lg" aria-hidden="true"></i>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="map">
+	<div id="mapid"></div>
+	<aside class="aside">
+		<div class="form disable">
+			<h2> Détails de la station</h2>
+			<p class="station-name"></p>
+			<p class="station-adresse"></p>
+			<p> Vélo(s) restant(s) : <span class="station-dispo"></span></p>
+			<form class="form station-closed">
+				<p><label>Nom:</label> <input class="nom" type="text" placeholder="Anquetil"></p>
+				<p><label>Prénom:</label> <input class="prenom" type="text" placeholder="Jacques"></p>
+				<button class= "button-form button-confirm-name" type= "button" >Valider</button>
+				<div class="popup">
+				<span class="popup-text popup-name"> Merci de rentrer un nom et prénom</span>
+				</div>
+				<div class="canvas-div canvas-disabled">
+					<canvas id="canvas" width="400" height="200"></canvas>
+					<button class="button-form button-submit" type="button"> Réserver </button>
+					<button class="button-form button-clear" type="button"> Effacer la signature </button>
+					<div class="popup">
+					<span class="popup-text popup-canvas"> Merci de signer pour réserver votre vélo</span>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="timer disable">
+			<p>Vélo réservé à la station <span class="timer-station"></span> par <span class="timer-nom"></span> <span class="timer-prenom"></span></p>
+			<p class = "timer-adresse"></p>
+			<p>Vélo(s) restant(s) : <span class ="timer-velo"></span></p>
+			<p>Temps Restant : <span class="timer-display"></span></p>
+			<button class="cancel-btn">Annuler la réservation</button>
+		</div>
+	</aside>
+</section>
+<section class="legende">
+	<p><img src="./assets/images/green.png" alt="markergreen"> = Station Ouverte</p>
+	<p><img src="./assets/images/orange.png" alt="markerorange"> = Station ouverte, aucun vélo dispo</p>
+	<p><img src="./assets/images/red.png" alt="markerred"> = Station fermée</p>
+</section>
+<footer>
+</footer>
+
+<script src="https://kit.fontawesome.com/db9607f191.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+crossorigin=""></script>
+<script src="./scripts/slider.js"></script>
+<script src="./scripts/stations.js"></script>
+<script src="./scripts/map.js"></script>
+<script src="./scripts/formulaire.js"></script>
+<script src="./scripts/index.js"></script>
+</body>
+
+
